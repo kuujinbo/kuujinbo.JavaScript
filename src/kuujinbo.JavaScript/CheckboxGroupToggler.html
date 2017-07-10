@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>CheckboxGroupToggler</title>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+</head>
+<body>
+<div class='container'>
+<!-- edit here -->
+    <ul class='list-group' id='DataFieldsUL'>
+        <li class='list-group-item'><input name='fldArchiveFlag' type='checkbox' /> ArchiveFlag</li>
+        <li class='list-group-item'><input name='fldId' type='checkbox' /> Id</li>
+        <li class='list-group-item'><input name='fldName' type='checkbox' /> Name</li>
+        <li class='list-group-item'><input name='fldUpdated' type='checkbox' /> Updated</li>
+    </ul>
+</div>
+<script type='text/javascript' src='./CheckboxGroupToggler.js'></script>
+<script type='text/javascript'>
+    var checkboxGroupToggler = new CheckboxGroupToggler();
+    // edit here
+    checkboxGroupToggler.setCheckGroupSelector('#DataFieldsUL');
+    checkboxGroupToggler.addToggleElement();
+</script>
+</body>
+</html>

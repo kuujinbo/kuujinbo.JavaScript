@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "kuujinbo.JavaScript", "http://localhost:12758", "{072DE15B-9C19-4A98-8727-D5A5F32EF43A}"
+	ProjectSection(WebsiteProperties) = preProject
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_12758"
+		Debug.AspNetCompiler.PhysicalPath = "src\kuujinbo.JavaScript\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_12758\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_12758"
+		Release.AspNetCompiler.PhysicalPath = "src\kuujinbo.JavaScript\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_12758\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "src\kuujinbo.JavaScript\"
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{CB11A437-77F8-43FB-A62D-1D562805B18C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kuujinbo.JavaScript.Tests", "src\kuujinbo.JavaScript.Tests\kuujinbo.JavaScript.Tests.csproj", "{F29C9ACB-734A-428A-A3D1-B54E9307F971}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{072DE15B-9C19-4A98-8727-D5A5F32EF43A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072DE15B-9C19-4A98-8727-D5A5F32EF43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072DE15B-9C19-4A98-8727-D5A5F32EF43A}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{072DE15B-9C19-4A98-8727-D5A5F32EF43A}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{F29C9ACB-734A-428A-A3D1-B54E9307F971}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F29C9ACB-734A-428A-A3D1-B54E9307F971}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F29C9ACB-734A-428A-A3D1-B54E9307F971}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F29C9ACB-734A-428A-A3D1-B54E9307F971}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{072DE15B-9C19-4A98-8727-D5A5F32EF43A} = {CB11A437-77F8-43FB-A62D-1D562805B18C}
+		{F29C9ACB-734A-428A-A3D1-B54E9307F971} = {CB11A437-77F8-43FB-A62D-1D562805B18C}
+	EndGlobalSection
+EndGlobal
