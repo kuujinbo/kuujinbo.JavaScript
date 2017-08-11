@@ -8,18 +8,18 @@
 <body>
 <div class='container'>
 <!-- edit here -->
-    <ul class='list-group' id='DataFieldsUL'>
+    <ul class='list-group' id='ul-group'>
         <li class='list-group-item'><input name='fldArchiveFlag' type='checkbox' /> ArchiveFlag</li>
         <li class='list-group-item'><input name='fldId' type='checkbox' /> Id</li>
         <li class='list-group-item'><input name='fldName' type='checkbox' /> Name</li>
         <li class='list-group-item'><input name='fldUpdated' type='checkbox' /> Updated</li>
     </ul>
 </div>
+
 <script type='text/javascript' src='./CheckboxGroupToggler.js'></script>
 <script type='text/javascript'>
-    var checkboxGroupToggler = new CheckboxGroupToggler();
+    var checkboxGroupToggler = new CheckboxGroupToggler('#ul-group');
     // edit here
-    checkboxGroupToggler.setCheckGroupSelector('#DataFieldsUL');
     checkboxGroupToggler.addToggleElement();
 </script>
 </body>
