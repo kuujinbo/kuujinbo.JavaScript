@@ -14,6 +14,12 @@
         <li class='list-group-item'><input name='fldName' type='checkbox' /> Name</li>
         <li class='list-group-item'><input name='fldUpdated' type='checkbox' /> Updated</li>
     </ul>
+
+    <div id='inline-checkboxes'>
+        <input name='00' type='checkbox' /> 00
+        <input name='01' type='checkbox' /> 01
+        <input name='02' type='checkbox' /> 02
+    </div>
 </div>
 
 <script type='text/javascript' src='./CheckboxGroupToggler.js'></script>
@@ -21,6 +27,11 @@
     var checkboxGroupToggler = new CheckboxGroupToggler('#ul-group');
     // edit here
     checkboxGroupToggler.addToggleElement();
+
+    var inline = new CheckboxGroupToggler('#inline-checkboxes');
+    // edit here
+    inline.addToggleElement(true);
+
 </script>
 </body>
 </html>

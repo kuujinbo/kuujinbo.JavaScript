@@ -33,7 +33,8 @@ CheckboxGroupToggler.prototype = {
 
         return element;
     },
-    addToggleElement: function(addBefore) {
+    // toggle widget added **BEFORE** container element by default
+    addToggleElement: function(addAfter) {
         var toggler = document.createElement('span');
         toggler.innerHTML = "<button type='button' class='"
             + this.buttonCheckClassList
@@ -41,7 +42,7 @@ CheckboxGroupToggler.prototype = {
             + this.getCheckAllHtml()
             + '</button>';
         var checkGroup = this.getCheckGroup();
-        checkGroup.parentNode.insertBefore(toggler, addBefore ? checkGroup : checkGroup.nextSibling);
+        checkGroup.parentNode.insertBefore(toggler, !addAfter ?  checkGroup : checkGroup.nextSibling);
 
         toggler.addEventListener(
             'click', this.clickToggleElement.bind(this), false
