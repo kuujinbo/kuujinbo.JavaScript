@@ -44,6 +44,8 @@
   <ItemGroup>
     <Content Include="CheckboxGroupToggler.Tests.js" />
     <Content Include="helpers\jasmine-jquery.js" />
+    <Content Include="helpers\jquery-3.1.1.min.js" />
+    <Content Include="SessionTerminator.Tests.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Chutzpah.json" />

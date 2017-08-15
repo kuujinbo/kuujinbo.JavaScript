@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>SessionTerminator</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <!--<link rel='stylesheet' href='https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'>-->
+</head>
+<body>
+    <div class='container'>
+        <h1>SessionTerminator Simulated Application Entry Page</h1>
+
+        <p>Test application entry / login page.</p>
+
+        <p><a href='./SessionTerminatorAppPage.html' class='btn btn-primary'>Enter Application</a></p>
+
+        <script type='text/javascript' src='./SessionTerminator.js'></script>
+        <!--<script type='text/javascript' src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+        <script type='text/javascript' src='https://code.jquery.com/ui/1.12.1/jquery-ui.min.js'></script>-->
+        <script type='text/javascript'>
+            if (location.search) {
+                var sessionTerminator = new SessionTerminator();
+                sessionTerminator.showLogoutMessage();
+            }
+            console.log('location.search: [' + location.search + ']');
+        </script>
+    </div>
+</body>
+</html>

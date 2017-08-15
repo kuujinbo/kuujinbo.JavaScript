@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>SessionTerminator</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+</head>
+<body>
+    <div class='container'>
+        <h1>SessionTerminator</h1>
+
+        <p>
+            Test application page - a simulated logout will occur after <strong><span id='idle-timeout'></span> seconds</strong> of inactivity. 
+        </p>
+
+        <script type='text/javascript' src='./SessionTerminator.js'></script>
+        <script type='text/javascript'>
+            var idleTimeout = 5;
+            var timeoutSpan = document.querySelector('#idle-timeout');
+            timeoutSpan.innerText = idleTimeout;
+            var sessionTerminator = new SessionTerminator();
+            sessionTerminator.init(idleTimeout, './SessionTerminator.html?timeout=1');
+        </script>
+    </div>
+</body>
+</html>
