@@ -2,7 +2,7 @@
 
 'use strict';
 
-describe('SessionTerminator', function () {
+describe('SessionTerminator', function() {
     var terminator, goodTimeout, goodLogoutUrl, invalidTimeout;
 
     beforeEach(function() {
@@ -12,41 +12,41 @@ describe('SessionTerminator', function () {
         invalidTimeout = terminator.maxTimeout + 1;
     });
 
-    describe('new instance', function () {
-        it('initializes defaults', function () {
+    describe('new instance', function() {
+        it('initializes defaults', function() {
             expect(terminator._timeoutID).toBe(0);
             expect(terminator._idleTimeout).toBe(terminator.adminTimeout);
             expect(terminator._logoutUrl).toBe('');
         });
     });
 
-    describe('init', function () {
-        it('throws when logoutUrl not passed', function () {
-            expect(function () { terminator.init(); }).toThrow(terminator.initError);
+    describe('init', function() {
+        it('throws when logoutUrl not passed', function() {
+            expect(function() { terminator.init(); }).toThrow(terminator.initError);
         });
 
-        it('throws when logoutUrl is invalid', function () {
-            expect(function () { terminator.init(goodTimeout, ''); })
+        it('throws when logoutUrl is invalid', function() {
+            expect(function() { terminator.init(goodTimeout, ''); })
                  .toThrow(terminator.initError);
-            expect(function () { terminator.init(goodTimeout, '---'); })
+            expect(function() { terminator.init(goodTimeout, '---'); })
                  .toThrow(terminator.initError);
-            expect(function () { terminator.init(goodTimeout, null); })
+            expect(function() { terminator.init(goodTimeout, null); })
                  .toThrow(terminator.initError);
         });
 
-        it('sets the default timeout when timeoutInSeconds not passed', function () {
+        it('sets the default timeout when timeoutInSeconds not passed', function() {
             terminator.init(null, '/a');
 
             expect(terminator._idleTimeout).toBe(terminator.maxTimeout * 1000);
         });
 
-        it('sets the default timeout when timeoutInSeconds is greater than allowed', function () {
+        it('sets the default timeout when timeoutInSeconds is greater than allowed', function() {
             terminator.init(invalidTimeout, goodLogoutUrl);
 
             expect(terminator._idleTimeout).toBe(terminator.maxTimeout * 1000);
         });
 
-        it('adds event listeners when valid parameters are passed', function () {
+        it('adds event listeners when valid parameters are passed', function() {
             terminator.init(goodTimeout, goodLogoutUrl);
 
             expect(window.onload).toEqual(jasmine.any(Function));
@@ -56,8 +56,8 @@ describe('SessionTerminator', function () {
         });
     });
 
-    describe('logout', function () {
-        it('calls window.location.replace() ', function () {
+    describe('logout', function() {
+        it('calls window.location.replace() ', function() {
             spyOn(window.location, 'replace');
 
             terminator.init(goodTimeout, goodLogoutUrl);
@@ -68,8 +68,8 @@ describe('SessionTerminator', function () {
         });
     });
 
-    describe('reset', function () {
-        it('calls window.clearTimeout() if _timeoutID greater than 0', function () {
+    describe('reset', function() {
+        it('calls window.clearTimeout() if _timeoutID greater than 0', function() {
             spyOn(window, 'clearTimeout');
 
             terminator.init(goodTimeout, goodLogoutUrl);
@@ -80,7 +80,7 @@ describe('SessionTerminator', function () {
             expect(window.clearTimeout).toHaveBeenCalledWith(terminator._timeoutID);
         });
 
-        it('calls window.setTimeout() if _timeoutID greater than 0', function () {
+        it('calls window.setTimeout() if _timeoutID greater than 0', function() {
             spyOn(window, 'setTimeout').and.callThrough();
 
             terminator.init(goodTimeout, goodLogoutUrl);
@@ -91,7 +91,7 @@ describe('SessionTerminator', function () {
             expect(window.setTimeout).toHaveBeenCalledWith(jasmine.any(Function), goodTimeout * 1000);
         });
 
-        it('calls reset on  window.onload()', function () {
+        it('calls reset on  window.onload()', function() {
             spyOn(terminator, 'reset');
             terminator.init(goodTimeout, goodLogoutUrl);
             window.onload();
@@ -99,7 +99,7 @@ describe('SessionTerminator', function () {
             expect(terminator.reset).toHaveBeenCalledTimes(1);
         });
 
-        it('calls reset on  window.onkeypress()', function () {
+        it('calls reset on  window.onkeypress()', function() {
             spyOn(terminator, 'reset');
             terminator.init(goodTimeout, goodLogoutUrl);
             window.onkeypress();
@@ -107,7 +107,7 @@ describe('SessionTerminator', function () {
             expect(terminator.reset).toHaveBeenCalledTimes(1);
         });
 
-        it('calls reset on  window.onmousemove()', function () {
+        it('calls reset on  window.onmousemove()', function() {
             spyOn(terminator, 'reset');
             terminator.init(goodTimeout, goodLogoutUrl);
             window.onmousemove();
@@ -115,7 +115,7 @@ describe('SessionTerminator', function () {
             expect(terminator.reset).toHaveBeenCalledTimes(1);
         });
 
-        it('calls reset on  window.onscroll()', function () {
+        it('calls reset on  window.onscroll()', function() {
             spyOn(terminator, 'reset');
             terminator.init(goodTimeout, goodLogoutUrl);
             window.onscroll();
@@ -124,8 +124,8 @@ describe('SessionTerminator', function () {
         });
     });
 
-    describe('showLogoutMessage', function () {
-        it('calls window.alert() if jQuery is not available', function () {
+    describe('showLogoutMessage', function() {
+        it('calls window.alert() if jQuery is not available', function() {
             spyOn(window, 'alert');
 
             terminator.init(goodTimeout, goodLogoutUrl);
@@ -135,7 +135,7 @@ describe('SessionTerminator', function () {
             expect(window.alert).toHaveBeenCalledWith(jasmine.any(String));
         });
 
-        it('calls showDialog() if jQuery is available', function () {
+        it('calls showDialog() if jQuery is available', function() {
             spyOn(terminator, 'showDialog').and.callThrough;
             window.jQuery = {
                 ui: {
