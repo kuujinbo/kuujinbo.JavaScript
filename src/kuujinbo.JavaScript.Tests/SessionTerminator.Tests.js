@@ -64,28 +64,35 @@ describe('SessionTerminator', function() {
             terminator.logout();
 
             expect(window.location.replace).toHaveBeenCalledTimes(1);
-            expect(window.location.replace).toHaveBeenCalledWith(terminator._logoutUrl);
+            expect(window.location.replace).toHaveBeenCalledWith(goodLogoutUrl);
         });
     });
 
     describe('reset', function() {
         it('calls window.clearTimeout() if _timeoutID greater than 0', function() {
             spyOn(window, 'clearTimeout');
+            spyOn(window, 'setTimeout');
+            var fakeId = 1;
 
             terminator.init(goodTimeout, goodLogoutUrl);
-            terminator._timeoutID = 1;
+            terminator._timeoutID = fakeId;
             terminator.reset();
 
             expect(window.clearTimeout).toHaveBeenCalledTimes(1);
-            expect(window.clearTimeout).toHaveBeenCalledWith(terminator._timeoutID);
+            expect(window.clearTimeout).toHaveBeenCalledWith(fakeId);
+            // setTimeout() always called
+            expect(window.setTimeout).toHaveBeenCalledTimes(1);
+            expect(window.setTimeout).toHaveBeenCalledWith(jasmine.any(Function), goodTimeout * 1000);
         });
 
-        it('calls window.setTimeout() if _timeoutID greater than 0', function() {
+        it('does not call window.clearTimeout() if _timeoutID less than 1', function() {
+            spyOn(window, 'clearTimeout');
             spyOn(window, 'setTimeout').and.callThrough();
 
             terminator.init(goodTimeout, goodLogoutUrl);
             terminator.reset();
 
+            expect(window.clearTimeout).not.toHaveBeenCalled();
             expect(terminator._timeoutID).toBeGreaterThan(0);
             expect(window.setTimeout).toHaveBeenCalledTimes(1);
             expect(window.setTimeout).toHaveBeenCalledWith(jasmine.any(Function), goodTimeout * 1000);
