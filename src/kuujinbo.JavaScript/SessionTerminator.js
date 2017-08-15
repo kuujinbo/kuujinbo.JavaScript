@@ -55,7 +55,6 @@ SessionTerminator.prototype = {
                 + '</em> due to inactivity.</p>';
 
             this.showDialog(logoutMessage);
-            // $('<div></div>').html(logoutMessage).dialog({ width: 'auto', modal: true, title: 'Session Logout' });
         } else {
             var logoutMessage = 'Session Logout\n\n'
                 + 'Per DOD Cybersecurity policy you were logged out of the application at '
